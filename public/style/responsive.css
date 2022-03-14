@@ -1,0 +1,29 @@
+@media screen and (max-width: 450px){
+
+    body .content {
+        display: inline-block; 
+    }
+
+    main {
+       justify-content: center;
+    }
+
+    #bg {
+    margin: -2.6rem auto;
+    width: 20rem;
+    height: 20rem;
+    }
+
+    #room header {
+        display: inline-block;
+        margin: 2.2rem;
+    }
+
+    #room header a > img {
+        margin-bottom: .5rem;
+    }
+
+    #room {
+        margin: auto 2rem;
+    }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/home.css">
+    <link rel="icon" type="image/x-icon" href="images/icone-nav.png" style="border-radius: 50;">
+    
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+    <title>Criar Sala - Kuroi</title>
+
+</head>
+<body>
+
+    <div id="home" class="content">
+        <a href="index.ejs">
+            <header>
+                <img src="images/logo.svg" alt="logo">
+            </header>
+        </a>
+
+        <div id="bg">
+            <div class="ball top"></div>
+            <div class="ball bottom"></div>
+        </div>
+    
+        <main>
+            <div class="container">
+                <section>
+                    <h2>Crie sua própia sala</h2>
+                    <form action="room.ejs">
+                        <label class="sr-only" for="room-pass">Insira uma senha</label>
+                        <input id="room-pass" type="password" placeholder="Insira uma senha">
+                        <button>
+                            <img src="images/entrar-sala.png" alt="Entrar na sala">
+                            Entrar na Sala
+                        </button>
+                    </form>
+                </section>
+    
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
