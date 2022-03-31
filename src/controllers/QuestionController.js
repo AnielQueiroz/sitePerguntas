@@ -1,5 +1,9 @@
+/*import Modal from '../../public/scripts/modal.js';
+const modal = Modal();*/
+
 const Database = require('../db/config')
 
+//const erroSenha = document.querySelector('.modal #erroSenha');
 
 module.exports = {
     
@@ -22,21 +26,25 @@ module.exports = {
                 
                 await db.run(`DELETE FROM questions WHERE id = ${questionId}`);
                 
+                //res.redirect(`/room/${roomId}`)
             }
             /*else if(action == "check"){
                 
                 await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionId}`)
 
             }*/
+        }else{
+            res.render('passIncorrect', {roomId: roomId});
         }
 
         if (action == "check"){
             await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionId}`)
+
+        }else{
+            
+            res.redirect(`/room/${roomId}`)
         }
                 
-        
-
-        res.redirect(`/room/${roomId}`)
 
         //console.log(`room = ${roomId}, question = ${questionId}, action = ${action}, password = ${password}`);
     },
