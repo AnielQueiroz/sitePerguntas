@@ -18,30 +18,31 @@ module.exports = {
 
         /**Verifica se a senha está correta**/ 
         const verifyRoom = await db.get(`SELECT * FROM rooms WHERE id = ${roomId}`)
-        if(verifyRoom.pass == password){
+        //if(verifyRoom.pass == password){
             
             //erroSenha.innerHTML = "Funciona";
 
             if (action == "delete"){
+
+                if(verifyRoom.pass == password){
                 
                 await db.run(`DELETE FROM questions WHERE id = ${questionId}`);
                 
                 //res.redirect(`/room/${roomId}`)
-            }
+                }else{
+                res.render('passIncorrect', {roomId: roomId});
+                }
             /*else if(action == "check"){
                 
                 await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionId}`)
 
             }*/
-        }else{
-            res.render('passIncorrect', {roomId: roomId});
         }
 
         if (action == "check"){
             await db.run(`UPDATE questions SET read = 1 WHERE id = ${questionId}`)
-
+            res.redirect(`/room/${roomId}`)
         }else{
-            
             res.redirect(`/room/${roomId}`)
         }
                 
